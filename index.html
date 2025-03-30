@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--Copyleft Michaelangel007 2012-2025 -->
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" charset="utf-8">
+    <title>N-Body (HTML5) with positive and negative attraction.</title>
+    <style>
+body, div, canvas, table
+{
+    margin: 0;
+    padding: 0;
+}
+canvas
+{
+    display: block;
+/* border: 1px solid red; */
+    left: 0px; top: 0px;
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    z-index: 0;
+}
+div
+{
+/* border: 1px solid blue; */
+    background: #ffffff;
+    color: #000000;
+    display: inline-block;
+    line-height: 1.25em;
+    padding: 10px;
+    position: absolute; 
+    bottom: 0px; right: 0px;
+    z-index: 9;
+}
+/* https://chrispennington.blog/blog/add-styling-to-keyboard-keys-css/ */
+span.key
+{
+    border-radius: 2px;
+    border: 1px solid black;
+    box-shadow: 1px 1px black;
+    font-size: .85em;
+    padding: 1px 1px;
+    white-space: nowrap;
+}
+td.c
+{
+    text-align: center;
+}
+.r
+{
+    color: #F00;
+    text-align: right;
+}
+    </style>
+    <script src="nbody.js"></script>
+</head>
+<body data-rendering="true" onload='OnLoad()'>
+<div id="instructions">
+<a href='https://michaelangel007.github.io/js_nbody/'><i>Psuedo n-body Simulator</i></a><br>
+<b>Instructions:</b><br>
+<span class='key'>v</span> Toggle drawing Velocity vectors<br>
+<span class='key'>f</span> Toggle drawing Force vectors<br>
+<b>Drag</b> blue center to move magnet<br>
+<b>Double Click</b> to create new magnet<br>
+<table>
+  <tr>
+    <td>
+    <table>
+      <tr><td class='c'><span class='key'>&larr;</span></td><td> Theme </td><td><span id='CurTheme'>1</span>/<span id='MaxTheme'>1</span> </td><td class='c'><span class='key'>&rarr;</span></td></tr>
+      <tr><td class='c'><span class='key'>&uarr;</span></td><td> World </td><td><span id='CurWorld'>1</span>/<span id='MaxWorld'>1</span> </td><td class='c'><span class='key'>&darr;</span></td></tr>
+    </table>
+    </td align='right'>
+    <td>
+      <table>
+        <tr><td>Particles: <b><span id='CurParts'>1</span></b></td></tr>
+        <tr><td>&nbsp;</td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</div>
+<canvas id = "world">
+    <p class="noCanvas">You need a <a href="http://www.google.com/chrome">modern browser</a> to view this.</p>
+</canvas>
+</body>
+</html>
